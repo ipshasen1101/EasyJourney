@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- CSS EXTERNAL FILES -->
+    <link rel="stylesheet" href="../css/scroll.css">
+
+    <!-- FAVICON -->
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32x32.png">
+
+    <title>Trains | EasyJourney</title>
+</head>
+<body class="">
+    <div class="bg-[url('../assets/white.jpg')] w-full min-h-screen font-sans text-gray-900">
+        <nav class="relative backdrop-blur-xl bg-opacity-20 ">
+            <div class="container px-6 py-4 mx-auto md:flex md:justify-around md:items-center">
+                <div class="flex items-center justify-between">
+                  <a href="homepage.html" class="text-4xl font-bold text-[#003049] tracking-wide">Eas<span class="text-[#1aa8b1]">y</span>Jour<span class="text-[#1aa8b1]">ney</span></a>
+        
+                    <!-- Mobile menu button -->
+                    <div class="flex md:hidden">
+                        <button x-cloak @click="isOpen = !isOpen" type="button" class="text-gray-500  hover:text-gray-600  focus:outline-none focus:text-gray-600 " aria-label="toggle menu" id="btn">
+                            <ion-icon name="menu" class="w-6 h-6" id="menu"></ion-icon>
+                    
+                            <ion-icon name="close" class="w-6 h-6 hidden" id="close"></ion-icon>
+                        </button>
+                    </div>
+                </div>
+        
+                <!-- Mobile Menu open: "block", Menu closed: "hidden" -->
+                <div class="absolute hidden backdrop-blur-lg bg-opacity-60 inset-x-0 w-full px-6 py-4 transition-all duration-300 ease-in-out bg-[#E7E7E7] mt-4 md:mt-0 md:p-0 md:top-0 md:relative md:bg-transparent md:w-auto md:opacity-100 md:translate-x-0 md:flex md:items-center opacity-0 -translate-x-full" id="nav">
+                    <ul class="flex flex-col md:flex-row md:mx-6 font-semibold">
+                        <a id="home" href="homepage.html" class="my-2 text-[#003049] text-base group transition-colors duration-300 transform  hover:text-[#1aa8b1]/80 md:mx-4 md:my-0">
+                          Home
+                          <div class="h-0.5 bg-[#1aa8b1] scale-x-0 group-hover:scale-100 transition-transform origin-left rounded-full duration-400 ease-out"></div>
+                        </a>
+                        <a id="gallery" href="homepage.html#gallery" class="my-2 text-[#003049] text-base group transition-colors duration-300 transform  hover:text-[#1aa8b1]/80 md:mx-4 md:my-0" href="#">
+                            Gallery
+                            <div class="h-0.5 bg-[#1aa8b1] scale-x-0 group-hover:scale-100 transition-transform origin-left rounded-full duration-400 ease-out"></div>
+                          </a>
+                          <a class="group my-2 text-[#003049] text-base transition-colors duration-300 transform  hover:text-[#1aa8b1]/80 md:mx-4 md:my-0" href="homepage.html#contact">Contact Us
+                            <div class="h-0.5 bg-[#1aa8b1] scale-x-0 group-hover:scale-100 transition-transform origin-left rounded-full duration-400 ease-out"></div>
+                          </a>
+                        
+                    </ul>
+        
+                    <div class="flex justify-between -pr-10" id="getStartedBtnDiv">
+                          <button href="login.html" id="getStartedBtn" class="bg-[#1aa8b1] ml-2 backdrop-blur-md bg-opacity-70 flex justify-center items-center h-12 px-7 font-medium text-white rounded-xl hover:drop-shadow-lg duration-400 whitespace-nowrap transition-all hover:scale-105 duration-300 hover:bg-[#0b8a93] focus:ring-4 focus:outline-none focus:ring-[#0b8a93]/80">Get Started</button>
+                          <div class="z-100 ml-40 pl-10">
+                            <ion-icon name="person-circle-outline" id="profileIcon" class="hidden w-12 h-12 text-[#1aa8b1] hover:text-[#189FA9] hover:scale-110 transition-scale duration-300"></ion-icon>
+                            <div class="bg-gray-200 hidden absolute flex flex-col rounded mt-1 p-2 text-sm w-32" id="dropdown">
+                              <a href="profile.html" class="px-2 py-1 hover:bg-[#1aa8b1]/40 text-[#003049] font-semibold rounded-xl">Profile</a>
+                              <a href="" id="signOutBtn" class="px-2 py-1 hover:bg-[#1aa8b1]/40 text-[#003049] font-semibold rounded-xl divide-y">Sign Out</a>
+                            </div>
+                          </div>     
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <!-- nav ends -->
+
+
+        <div class="flex flex-col sm:flex-row justify-around text-2xl font-bold items-center py-4 sm:py-2 w-full  space-x-18">
+            <a href="#" class="font-semibold group text-4xl my-2 sm:my-0 text-[#1aa8b1]" id="trains">Trains
+                <div class="h-0.5 bg-[#1aa8b1] scale-x-0 group-hover:scale-100 transition-transform origin-left rounded-full duration-400 ease-out"></div>
+            </a>
+            <a href="#" class="font-medium text-[#003049] group text-3xl my-2 sm:my-0 hover:text-[#1aa8b1] cursor-pointer" id="hotels">Hotels
+                <div class="h-0.5 bg-[#1aa8b1] scale-x-0 group-hover:scale-100 transition-transform origin-left rounded-full duration-400 ease-out"></div>
+            </a>
+            <a href="#" class="font-medium text-[#003049] group text-3xl my-2 sm:my-0 hover:text-[#1aa8b1] cursor-pointer" id="attractions">Attractions
+                <div class="h-0.5 bg-[#1aa8b1] scale-x-0 group-hover:scale-100 transition-transform origin-left rounded-full duration-400 ease-out"></div>
+            </a>
+        </div>
+        
+
+        <div class="flex flex-col mt-10">
+            <div class="-my-2 overflow-x-auto mb-10">
+                <div class="inline-block min-w-full py-2 align-middle md:px-2">
+                    <div class="overflow-hidden border border-gray-200 md:rounded-lg">
+                        <div class="flex justify-between backdrop-blur-xl bg-opacity-60 shadow">
+                            <div class="flex mx-10 justify-center">
+                                <h2 class="text-2xl text-[#003049] font-semibold flex justify-center items-center">Train Results</h2>
+                            </div>
+                    
+                            <div class="relative z-0 w-[400px]  pl-6 pr-20 py-5 rounded-lg group">
+                                <input type="text" name="search" id="search" class="block py-2.5 px-4 w-full text-sm text-gray-200 focus:text-[#003049] bg-transparent border-2 rounded-full border-gray-400 appearance-none focus:outline-none focus:ring-0 focus:border-[#003049] peer" placeholder=" " autocomplete="off" />
+                                <label for="search" class="flex left-12 peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-8 -z-10 origin-[0] peer-focus:left-7 peer-focus:text-[#003049] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-8">Search for any train...</label>
+                                <ion-icon class="font-medium text-gray-500 absolute top-[26px] left-[280px] w-8 h-8 peer-focus:text-[#003049]" name="search-circle-outline"></ion-icon>
+                            </div>
+                        </div>
+                        <table class="backdrop-blur-xl bg-opacity-50 min-w-full divide-y divide-gray-200" class="table">
+                            <thead class="">
+                                <tr>
+                                    <th scope="col" class="py-3.5 px-4 text-sm font-normal text-[#003049]">
+                                        <span>Name</span>    
+                                    </th>
+                                    <th scope="col" class="px-4 py-3.5 text-sm font-normal text-[#003049]">
+                                        <span>Train Origin Station</span>
+                                    </th>
+                                    <th scope="col" class="px-4 py-3.5 text-sm font-normal text-[#003049]">
+                                        <span>Train Destination Station</span>
+                                    </th>
+    
+                                    <th scope="col" class="px-4 py-3.5 text-sm font-normal text-[#003049]">
+                                        <span>Departure Time</span>
+                                    </th>
+    
+                                    <th scope="col" class="px-4 py-3.5 text-sm font-normal text-[#003049]">
+                                        <span>Arrival Time</span>
+                                  </th>
+
+                                  <th scope="col" id="time" class="px-4 py-3.5 text-sm font-normal text-[#003049]">Total Time(hr)</th>
+                                  <th scope="col" class="px-4 py-3.5 text-sm font-normal text-[#003049] ">Run Days</th>
+                                  <th scope="col" class="px-4 py-3.5 text-sm font-normal text-[#003049] "></th>  
+                                </tr>
+                            </thead>
+                            <tbody class="relative divide-y divide-gray-200 mx-2" id="table_body">
+                                
+                            </tbody>
+                            <tbody class="animate-pulse relative divide-y divide-gray-200" id="loader">
+                                <tr class="bg-opacity-50 backdrop-blur-xl">
+                                  <td class="px-4 py-4 text-sm font-medium text-gray-700 whitespace-nowrap">
+                                      <div class="inline-flex items-center gap-x-3">
+                              
+                                          <div class="flex items-center gap-x-2">
+                                              
+                                              <div>
+                                                <div class="h-2.5 bg-gray-300 rounded-full w-10 mb-1"></div>
+                                                <div class="h-2 bg-gray-300 rounded-full w-5"></div>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </td>
+                                  <td class="px-4 py-4 text-sm text-gray-700 whitespace-nowrap">
+                                      <div class="inline-flex items-center gap-x-3">
+                              
+                                          <div class="flex items-center gap-x-2">
+                                              
+                                              <div>
+                                                <div class="h-2 bg-gray-300 rounded-full w-20 mb-1"></div>
+                                                <div class="h-1.5 bg-gray-300 rounded-full w-10"></div>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </td>
+                                  <td class="px-6 py-4 text-sm text-gray-700 whitespace-nowrap">
+                                      <div class="inline-flex items-center gap-x-3">
+                              
+                                          <div class="flex items-center gap-x-2">
+                                              
+                                              <div>
+                                                <div class="h-2 bg-gray-300 rounded-full w-20 mb-1"></div>
+                                                <div class="h-1.5 bg-gray-300 rounded-full w-10"></div>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </td>
+                                  
+                                  <td class="px-8 py-4 text-sm text-gray-500 whitespace-nowrap"><div class="h-2 bg-gray-300 rounded-full w-14 mb-1"></div>
+                                  </td>
+                                  <td class="px-8 py-4 text-sm text-gray-500 whitespace-nowrap"><div class="h-2 bg-gray-300 rounded-full w-14 mb-1"></div>
+                                  </td>
+                                  
+                                  <td class="px-4 py-4 text-sm text-gray-500 whitespace-nowrap"><div class="h-2 bg-gray-300 rounded-full w-14 mb-1"></div>
+                                  </td>
+                                  
+                                  <td class="px-4 py-4 text-sm text-gray-500 whitespace-nowrap">
+                                      <div class="flex flex-wrap gap-2">
+                                        <p class="px-3 py-1 rounded-full "><div class="h-2.5 bg-gray-300 rounded-full w-8 mb-1"></div></p>
+                                        <p class="px-3 py-1 rounded-full "><div class="h-2.5 bg-gray-300 rounded-full w-8 mb-1"></div></p>
+                                        <p class="px-3 py-1 rounded-full "><div class="h-2.5 bg-gray-300 rounded-full w-8 mb-1"></div></p>
+                                        <p class="px-3 py-1 rounded-full "><div class="h-2.5 bg-gray-300 rounded-full w-8 mb-1"></div></p>
+                                      </div>
+                                  </td>
+                                 
+                              </tr>
+                              <tr class="bg-opacity-50 backdrop-blur-xl">
+                                <td class="px-4 py-4 text-sm font-medium text-gray-700 whitespace-nowrap">
+                                    <div class="inline-flex items-center gap-x-3">
+                            
+                                        <div class="flex items-center gap-x-2">
+                                            
+                                            <div>
+                                              <div class="h-2.5 bg-gray-300 rounded-full w-10 mb-1"></div>
+                                              <div class="h-2 bg-gray-300 rounded-full w-5"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="px-4 py-4 text-sm text-gray-700 whitespace-nowrap">
+                                    <div class="inline-flex items-center gap-x-3">
+                            
+                                        <div class="flex items-center gap-x-2">
+                                            
+                                            <div>
+                                              <div class="h-2 bg-gray-300 rounded-full w-20 mb-1"></div>
+                                              <div class="h-1.5 bg-gray-300 rounded-full w-10"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="px-6 py-4 text-sm text-gray-700 whitespace-nowrap">
+                                    <div class="inline-flex items-center gap-x-3">
+                            
+                                        <div class="flex items-center gap-x-2">
+                                            
+                                            <div>
+                                              <div class="h-2 bg-gray-300 rounded-full w-20 mb-1"></div>
+                                              <div class="h-1.5 bg-gray-300 rounded-full w-10"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                
+                                <td class="px-8 py-4 text-sm text-gray-500 whitespace-nowrap"><div class="h-2 bg-gray-300 rounded-full w-14 mb-1"></div>
+                                </td>
+                                <td class="px-8 py-4 text-sm text-gray-500 whitespace-nowrap"><div class="h-2 bg-gray-300 rounded-full w-14 mb-1"></div>
+                                </td>
+                                
+                                <td class="px-4 py-4 text-sm text-gray-500 whitespace-nowrap"><div class="h-2 bg-gray-300 rounded-full w-14 mb-1"></div>
+                                </td>
+                                
+                                <td class="px-4 py-4 text-sm text-gray-500 whitespace-nowrap">
+                                    <div class="flex flex-wrap gap-2">
+                                      <p class="px-3 py-1 rounded-full "><div class="h-2.5 bg-gray-300 rounded-full w-8 mb-1"></div></p>
+                                      <p class="px-3 py-1 rounded-full "><div class="h-2.5 bg-gray-300 rounded-full w-8 mb-1"></div></p>
+                                      <p class="px-3 py-1 rounded-full "><div class="h-2.5 bg-gray-300 rounded-full w-8 mb-1"></div></p>
+                                      <p class="px-3 py-1 rounded-full "><div class="h-2.5 bg-gray-300 rounded-full w-8 mb-1"></div></p>
+                                    </div>
+                                </td>
+                               
+                            </tr>
+                            <tr class="bg-opacity-50 backdrop-blur-xl">
+                              <td class="px-4 py-4 text-sm font-medium text-gray-700 whitespace-nowrap">
+                                  <div class="inline-flex items-center gap-x-3">
+                          
+                                      <div class="flex items-center gap-x-2">
+                                          
+                                          <div>
+                                            <div class="h-2.5 bg-gray-300 rounded-full w-10 mb-1"></div>
+                                            <div class="h-2 bg-gray-300 rounded-full w-5"></div>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </td>
+                              <td class="px-4 py-4 text-sm text-gray-700 whitespace-nowrap">
+                                  <div class="inline-flex items-center gap-x-3">
+                          
+                                      <div class="flex items-center gap-x-2">
+                                          
+                                          <div>
+                                            <div class="h-2 bg-gray-300 rounded-full w-20 mb-1"></div>
+                                            <div class="h-1.5 bg-gray-300 rounded-full w-10"></div>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </td>
+                              <td class="px-6 py-4 text-sm text-gray-700 whitespace-nowrap">
+                                  <div class="inline-flex items-center gap-x-3">
+                          
+                                      <div class="flex items-center gap-x-2">
+                                          
+                                          <div>
+                                            <div class="h-2 bg-gray-300 rounded-full w-20 mb-1"></div>
+                                            <div class="h-1.5 bg-gray-300 rounded-full w-10"></div>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </td>
+                              
+                              <td class="px-8 py-4 text-sm text-gray-500 whitespace-nowrap"><div class="h-2 bg-gray-300 rounded-full w-14 mb-1"></div>
+                              </td>
+                              <td class="px-8 py-4 text-sm text-gray-500 whitespace-nowrap"><div class="h-2 bg-gray-300 rounded-full w-14 mb-1"></div>
+                              </td>
+                              
+                              <td class="px-4 py-4 text-sm text-gray-500 whitespace-nowrap"><div class="h-2 bg-gray-300 rounded-full w-14 mb-1"></div>
+                              </td>
+                              
+                              <td class="px-4 py-4 text-sm text-gray-500 whitespace-nowrap">
+                                  <div class="flex flex-wrap gap-2">
+                                    <p class="px-3 py-1 rounded-full "><div class="h-2.5 bg-gray-300 rounded-full w-8 mb-1"></div></p>
+                                    <p class="px-3 py-1 rounded-full "><div class="h-2.5 bg-gray-300 rounded-full w-8 mb-1"></div></p>
+                                    <p class="px-3 py-1 rounded-full "><div class="h-2.5 bg-gray-300 rounded-full w-8 mb-1"></div></p>
+                                    <p class="px-3 py-1 rounded-full "><div class="h-2.5 bg-gray-300 rounded-full w-8 mb-1"></div></p>
+                                  </div>
+                              </td>
+                             
+                          </tr>
+                          <tr class="bg-opacity-50 backdrop-blur-xl">
+                            <td class="px-4 py-4 text-sm font-medium text-gray-700 whitespace-nowrap">
+                                <div class="inline-flex items-center gap-x-3">
+                          
+                                    <div class="flex items-center gap-x-2">
+                                        
+                                        <div>
+                                          <div class="h-2.5 bg-gray-300 rounded-full w-10 mb-1"></div>
+                                          <div class="h-2 bg-gray-300 rounded-full w-5"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="px-4 py-4 text-sm text-gray-700 whitespace-nowrap">
+                                <div class="inline-flex items-center gap-x-3">
+                          
+                                    <div class="flex items-center gap-x-2">
+                                        
+                                        <div>
+                                          <div class="h-2 bg-gray-300 rounded-full w-20 mb-1"></div>
+                                          <div class="h-1.5 bg-gray-300 rounded-full w-10"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="px-6 py-4 text-sm text-gray-700 whitespace-nowrap">
+                                <div class="inline-flex items-center gap-x-3">
+                          
+                                    <div class="flex items-center gap-x-2">
+                                        
+                                        <div>
+                                          <div class="h-2 bg-gray-300 rounded-full w-20 mb-1"></div>
+                                          <div class="h-1.5 bg-gray-300 rounded-full w-10"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                            
+                            <td class="px-8 py-4 text-sm text-gray-500 whitespace-nowrap"><div class="h-2 bg-gray-300 rounded-full w-14 mb-1"></div>
+                            </td>
+                            <td class="px-8 py-4 text-sm text-gray-500 whitespace-nowrap"><div class="h-2 bg-gray-300 rounded-full w-14 mb-1"></div>
+                            </td>
+                            
+                            <td class="px-4 py-4 text-sm text-gray-500 whitespace-nowrap"><div class="h-2 bg-gray-300 rounded-full w-14 mb-1"></div>
+                            </td>
+                            
+                            <td class="px-4 py-4 text-sm text-gray-500 whitespace-nowrap">
+                                <div class="flex flex-wrap gap-2">
+                                  <p class="px-3 py-1 rounded-full "><div class="h-2.5 bg-gray-300 rounded-full w-8 mb-1"></div></p>
+                                  <p class="px-3 py-1 rounded-full "><div class="h-2.5 bg-gray-300 rounded-full w-8 mb-1"></div></p>
+                                  <p class="px-3 py-1 rounded-full "><div class="h-2.5 bg-gray-300 rounded-full w-8 mb-1"></div></p>
+                                  <p class="px-3 py-1 rounded-full "><div class="h-2.5 bg-gray-300 rounded-full w-8 mb-1"></div></p>
+                                </div>
+                            </td>
+                           
+                          </tr>
+                              </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="signOutCard" class="hidden h-screen w-screen bg-opacity-40 backdrop-blur-lg fixed z-20">
+            <div class="z-100 absolute top-1/3 right-1/3 transition-all duration-600 ease-out backdrop-blur-md bg-opacity-50 backdrop-blur-md max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow">
+              <a href="#">
+                  <h5 class="mb-2 text-xl font-bold tracking-tight text-gray-900">You've been successfully logged out.</h5>
+              </a>
+              <p class="mb-3 font-normal text-gray-700">Hope you had a pleasant experience! You can log in again if you would like to continue the experience.</p>
+              <button href="#" id="okBtn" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-[#1aa8b1] rounded-lg hover:bg-[#1aa8b1]/60 focus:ring-4 focus:outline-none focus:ring-[#1aa8b1]">
+                  Ok
+              </button>
+            </div>
+          </div>
+    </div>
+    
+    <!-- TAILWIND CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- AXIOS -->
+    <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
+
+    <!-- ION ICONS -->
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+<script type="module" src="../javascript/train.js"></script>
+
+    
+</body>
+</html>

@@ -1,0 +1,410 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- FAVICON -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="../assets/favicon-32x32.png"
+    />
+
+    <!-- EXTERNAL CSS FILES -->
+    <link rel="stylesheet" href="../css/scroll.css" />
+
+    <!--FONTS-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Hotels | EasyJourney</title>
+  </head>
+  <body class="bg-[url('../assets/white2.jpg')] bg-cover bg-center">
+    <div class="w-full min-h-screen font-sans text-gray-900">
+      <!-- nav starts -->
+      <nav class="relative backdrop-blur-xl bg-opacity-20">
+        <div
+          class="container px-6 py-4 mx-auto md:flex md:justify-around md:items-center"
+        >
+          <div class="flex items-center justify-between">
+            <a href="" class="text-4xl font-bold text-[#003049] tracking-wide"
+              >Eas<span class="text-[#1aa8b1]">y</span>Jour<span
+                class="text-[#1aa8b1]"
+                >ney</span
+              ></a
+            >
+
+            <!-- Mobile menu button -->
+            <div class="flex md:hidden">
+              <button
+                x-cloak
+                @click="isOpen = !isOpen"
+                type="button"
+                class="text-gray-500 hover:text-gray-600 focus:outline-none focus:text-gray-600"
+                aria-label="toggle menu"
+                id="btn"
+              >
+                <ion-icon name="menu" class="w-6 h-6" id="menu"></ion-icon>
+
+                <ion-icon
+                  name="close"
+                  class="w-6 h-6 hidden"
+                  id="close"
+                ></ion-icon>
+              </button>
+            </div>
+          </div>
+
+          <!-- Mobile Menu open: "block", Menu closed: "hidden" -->
+          <div
+            class="absolute hidden backdrop-blur-lg bg-opacity-60 inset-x-0 w-full px-6 py-4 transition-all duration-300 ease-in-out bg-[#E7E7E7] mt-4 md:mt-0 md:p-0 md:top-0 md:relative md:bg-transparent md:w-auto md:opacity-100 md:translate-x-0 md:flex md:items-center opacity-0 -translate-x-full"
+            id="nav"
+          >
+            <ul class="flex flex-col md:flex-row md:mx-6 font-semibold">
+              <a
+                id="home"
+                class="my-2 text-[#003049] text-base group transition-colors duration-300 transform hover:text-[#1aa8b1]/80 md:mx-4 md:my-0"
+                href="homepage.html"
+              >
+                Home
+                <div
+                  class="h-0.5 bg-[#1aa8b1] scale-x-0 group-hover:scale-100 transition-transform origin-left rounded-full duration-400 ease-out"
+                ></div>
+              </a>
+              <a
+                id="gallery"
+                href="homepage.html#gallery"
+                class="my-2 text-[#003049] text-base group transition-colors duration-300 transform hover:text-[#1aa8b1]/80 md:mx-4 md:my-0"
+                href="#"
+              >
+                Gallery
+                <div
+                  class="h-0.5 bg-[#1aa8b1] scale-x-0 group-hover:scale-100 transition-transform origin-left rounded-full duration-400 ease-out"
+                ></div>
+              </a>
+              <a
+                class="group my-2 text-[#003049] text-base transition-colors duration-300 transform hover:text-[#1aa8b1]/80 md:mx-4 md:my-0"
+                href="homepage.html#contact"
+                >Contact Us
+                <div
+                  class="h-0.5 bg-[#1aa8b1] scale-x-0 group-hover:scale-100 transition-transform origin-left rounded-full duration-400 ease-out"
+                ></div>
+              </a>
+            </ul>
+
+            <div class="flex justify-between -pr-10" id="getStartedBtnDiv">
+              <button
+                href="login.html"
+                id="getStartedBtn"
+                class="bg-[#1aa8b1] ml-2 backdrop-blur-md bg-opacity-70 flex justify-center items-center h-12 px-7 font-medium text-white rounded-xl hover:drop-shadow-lg duration-400 whitespace-nowrap transition-all hover:scale-105 duration-300 hover:bg-[#0b8a93] focus:ring-4 focus:outline-none focus:ring-[#0b8a93]/80"
+              >
+                Get Started
+              </button>
+              <div class="z-100 ml-40 pl-10">
+                <ion-icon
+                  name="person-circle-outline"
+                  id="profileIcon"
+                  class="hidden w-12 h-12 text-[#1aa8b1] hover:text-[#189FA9] hover:scale-110 transition-scale duration-300"
+                ></ion-icon>
+                <div
+                  class="bg-gray-200 hidden absolute flex flex-col rounded mt-1 p-2 text-sm w-32"
+                  id="dropdown"
+                >
+                  <a
+                    href="profile.html"
+                    class="px-2 py-1 hover:bg-[#1aa8b1]/40 text-[#003049] font-semibold rounded-xl"
+                    >Profile</a
+                  >
+                  <a
+                    href=""
+                    id="signOutBtn"
+                    class="px-2 py-1 hover:bg-[#1aa8b1]/40 text-[#003049] font-semibold rounded-xl divide-y"
+                    >Sign Out</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <!-- nav ends -->
+
+      <div
+        class="flex flex-col sm:flex-row justify-around text-2xl font-bold items-center py-4 sm:py-2 w-full space-x-18"
+      >
+        <a
+          href="#"
+          class="font-medium text-[#003049] group text-3xl my-2 sm:my-0 hover:text-[#1aa8b1]/80 cursor-pointer"
+          id="trains"
+          >Trains
+          <div
+            class="h-0.5 bg-[#1aa8b1] scale-x-0 group-hover:scale-100 transition-transform origin-left rounded-full duration-400 ease-out"
+          ></div>
+        </a>
+        <a
+          href="#"
+          class="font-medium text-[#1aa8b1] group text-4xl my-2 sm:my-0 hover:text-[#1aa8b1]/80 cursor-pointer"
+          id="hotels"
+          >Hotels
+          <div
+            class="h-0.5 bg-[#1aa8b1] scale-x-0 group-hover:scale-100 transition-transform origin-left rounded-full duration-400 ease-out"
+          ></div>
+        </a>
+        <a
+          href="#"
+          class="font-medium text-[#003049] group text-3xl my-2 sm:my-0 hover:text-[#1aa8b1]/80 cursor-pointer"
+          id="attractions"
+          >Attractions
+          <div
+            class="h-0.5 bg-[#1aa8b1] scale-x-0 group-hover:scale-100 transition-transform origin-left rounded-full duration-400 ease-out"
+          ></div>
+        </a>
+      </div>
+
+      <div
+        class="flex justify-between backdrop-blur-xl bg-opacity-60 mt-10 mx-2 rounded shadow"
+      >
+        <div class="flex mx-10 justify-center">
+          <h2
+            class="text-2xl text-[#003049] font-semibold flex justify-center items-center"
+          >
+            Hotel Results
+          </h2>
+        </div>
+
+        <div class="relative z-0 w-[400px] pl-6 pr-20 py-5 rounded-lg group">
+          <input
+            type="text"
+            name="search"
+            id="search"
+            class="block py-2.5 px-4 w-full text-sm text-gray-200 focus:text-[#003049] bg-transparent border-2 rounded-full border-gray-400 appearance-none focus:outline-none focus:ring-0 focus:border-[#003049] peer"
+            placeholder=" "
+            autocomplete="off"
+          />
+          <label
+            for="search"
+            class="left-12 peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-8 -z-10 origin-[0] peer-focus:left-7 peer-focus:text-[#003049] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-8"
+            >Search for any hotels ...</label
+          >
+          <ion-icon class="font-medium text-gray-500 absolute top-[26px] left-[280px] w-8 h-8 peer-focus:text-[#003049]" name="search-circle-outline"></ion-icon>
+        </div>
+      </div>
+
+      <div
+        class="absolute mx-6 w-[90vw] grid grid-cols-1 lg:grid-cols-2 lg:gap-4 justify-items-center"
+        id="hotel_cards"
+      ></div>
+      <div
+        class="hidden grid grid-cols-1 md:grid-cols-2 lg:gap-4 justify-items-center mt-10"
+        id="loader"
+      >
+        <div
+          class="w-80 px-8 py-4 mt-16 bg-opacity-20 backdrop-blur-md rounded-lg shadow-lg animate-pulse"
+        >
+          <div class="flex justify-center -mt-16 md:justify-end">
+            <svg
+              class="object-cover rounded-full w-10 h-10 border-2 border-gray-400/70 text-gray-300"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+              fill="currentColor"
+              viewBox="0 0 640 512"
+            >
+              <path
+                d="M480 80C480 35.82 515.8 0 560 0C604.2 0 640 35.82 640 80C640 124.2 604.2 160 560 160C515.8 160 480 124.2 480 80zM0 456.1C0 445.6 2.964 435.3 8.551 426.4L225.3 81.01C231.9 70.42 243.5 64 256 64C268.5 64 280.1 70.42 286.8 81.01L412.7 281.7L460.9 202.7C464.1 196.1 472.2 192 480 192C487.8 192 495 196.1 499.1 202.7L631.1 419.1C636.9 428.6 640 439.7 640 450.9C640 484.6 612.6 512 578.9 512H55.91C25.03 512 .0006 486.1 .0006 456.1L0 456.1z"
+              />
+            </svg>
+          </div>
+          <div class="h-2.5 bg-gray-300 rounded-full w-40 mb-4"></div>
+          <div class="h-3 bg-gray-300 rounded-full w-20 mb-2.5"></div>
+          <div class="h-2 bg-gray-300 rounded-full w-10 mb-4"></div>
+          <div class="h-2 bg-gray-300 rounded-full w-30 mb-2.5"></div>
+          <div class="flex items-center w-full space-x-2 mb-2.5">
+            <div class="h-2.5 bg-gray-300 rounded-full w-full"></div>
+            <div class="h-2.5 bg-gray-300 rounded-full w-full"></div>
+            <div class="h-2.5 bg-gray-300 rounded-full w-24"></div>
+          </div>
+          <div class="h-2 bg-gray-300 rounded-full w-30 mb-2.5"></div>
+          <div class="flex items-center w-full space-x-2">
+            <div class="h-2.5 bg-gray-300 rounded-full w-42"></div>
+            <div class="h-2.5 bg-gray-300 rounded-full w-24"></div>
+            <div class="h-2.5 bg-gray-300 rounded-full w-full"></div>
+          </div>
+
+          <div class="flex justify-between mt-4">
+            <div class="h-5 bg-gray-300 rounded-full w-32"></div>
+
+            <div class="h-6 bg-gray-300 rounded-full w-20 mt-4"></div>
+          </div>
+        </div>
+        <div
+          class="max-w-md px-8 py-4 mt-16 bg-opacity-20 backdrop-blur-md rounded-lg shadow-lg animate-pulse"
+        >
+          <div class="flex justify-center -mt-16 md:justify-end">
+            <svg
+              class="object-cover rounded-full w-10 h-10 border-2 border-gray-400/70 text-gray-300"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+              fill="currentColor"
+              viewBox="0 0 640 512"
+            >
+              <path
+                d="M480 80C480 35.82 515.8 0 560 0C604.2 0 640 35.82 640 80C640 124.2 604.2 160 560 160C515.8 160 480 124.2 480 80zM0 456.1C0 445.6 2.964 435.3 8.551 426.4L225.3 81.01C231.9 70.42 243.5 64 256 64C268.5 64 280.1 70.42 286.8 81.01L412.7 281.7L460.9 202.7C464.1 196.1 472.2 192 480 192C487.8 192 495 196.1 499.1 202.7L631.1 419.1C636.9 428.6 640 439.7 640 450.9C640 484.6 612.6 512 578.9 512H55.91C25.03 512 .0006 486.1 .0006 456.1L0 456.1z"
+              />
+            </svg>
+          </div>
+          <div class="h-2.5 bg-gray-300 rounded-full w-48 mb-4"></div>
+          <div class="h-3 bg-gray-300 rounded-full w-20 mb-2.5"></div>
+          <div class="h-2 bg-gray-300 rounded-full w-10 mb-4"></div>
+          <div class="h-2 bg-gray-300 rounded-full w-30 mb-2.5"></div>
+          <div class="flex items-center w-full space-x-2 mb-2.5">
+            <div class="h-2.5 bg-gray-300 rounded-full w-full"></div>
+            <div class="h-2.5 bg-gray-300 rounded-full w-full"></div>
+            <div class="h-2.5 bg-gray-300 rounded-full w-24"></div>
+          </div>
+          <div class="h-2 bg-gray-300 rounded-full w-30 mb-2.5"></div>
+          <div class="flex items-center w-full space-x-2">
+            <div class="h-2.5 bg-gray-300 rounded-full w-32"></div>
+            <div class="h-2.5 bg-gray-300 rounded-full w-24"></div>
+            <div class="h-2.5 bg-gray-300 rounded-full w-full"></div>
+          </div>
+
+          <div class="flex justify-between mt-4">
+            <div class="h-5 bg-gray-300 rounded-full w-32"></div>
+
+            <div class="h-6 bg-gray-300 rounded-full w-20 mt-4"></div>
+          </div>
+        </div>
+        <div
+          class="max-w-md px-8 py-4 mt-16 bg-opacity-20 backdrop-blur-md rounded-lg shadow-lg animate-pulse"
+        >
+          <div class="flex justify-center -mt-16 md:justify-end">
+            <svg
+              class="object-cover rounded-full w-10 h-10 border-2 border-gray-400/70 text-gray-300"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+              fill="currentColor"
+              viewBox="0 0 640 512"
+            >
+              <path
+                d="M480 80C480 35.82 515.8 0 560 0C604.2 0 640 35.82 640 80C640 124.2 604.2 160 560 160C515.8 160 480 124.2 480 80zM0 456.1C0 445.6 2.964 435.3 8.551 426.4L225.3 81.01C231.9 70.42 243.5 64 256 64C268.5 64 280.1 70.42 286.8 81.01L412.7 281.7L460.9 202.7C464.1 196.1 472.2 192 480 192C487.8 192 495 196.1 499.1 202.7L631.1 419.1C636.9 428.6 640 439.7 640 450.9C640 484.6 612.6 512 578.9 512H55.91C25.03 512 .0006 486.1 .0006 456.1L0 456.1z"
+              />
+            </svg>
+          </div>
+          <div class="h-2.5 bg-gray-300 rounded-full w-48 mb-4"></div>
+          <div class="h-3 bg-gray-300 rounded-full w-20 mb-2.5"></div>
+          <div class="h-2 bg-gray-300 rounded-full w-10 mb-4"></div>
+          <div class="h-2 bg-gray-300 rounded-full w-30 mb-2.5"></div>
+          <div class="flex items-center w-full space-x-2 mb-2.5">
+            <div class="h-2.5 bg-gray-300 rounded-full w-full"></div>
+            <div class="h-2.5 bg-gray-300 rounded-full w-full"></div>
+            <div class="h-2.5 bg-gray-300 rounded-full w-24"></div>
+          </div>
+          <div class="h-2 bg-gray-300 rounded-full w-30 mb-2.5"></div>
+          <div class="flex items-center w-full space-x-2">
+            <div class="h-2.5 bg-gray-300 rounded-full w-32"></div>
+            <div class="h-2.5 bg-gray-300 rounded-full w-24"></div>
+            <div class="h-2.5 bg-gray-300 rounded-full w-full"></div>
+          </div>
+
+          <div class="flex justify-between mt-4">
+            <div class="h-5 bg-gray-300 rounded-full w-32"></div>
+
+            <div class="h-6 bg-gray-300 rounded-full w-20 mt-4"></div>
+          </div>
+        </div>
+        <div
+          class="max-w-md px-8 py-4 mt-16 bg-opacity-20 backdrop-blur-md rounded-lg shadow-lg animate-pulse"
+        >
+          <div class="flex justify-center -mt-16 md:justify-end">
+            <svg
+              class="object-cover rounded-full w-10 h-10 border-2 border-gray-400/70 text-gray-300"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+              fill="currentColor"
+              viewBox="0 0 640 512"
+            >
+              <path
+                d="M480 80C480 35.82 515.8 0 560 0C604.2 0 640 35.82 640 80C640 124.2 604.2 160 560 160C515.8 160 480 124.2 480 80zM0 456.1C0 445.6 2.964 435.3 8.551 426.4L225.3 81.01C231.9 70.42 243.5 64 256 64C268.5 64 280.1 70.42 286.8 81.01L412.7 281.7L460.9 202.7C464.1 196.1 472.2 192 480 192C487.8 192 495 196.1 499.1 202.7L631.1 419.1C636.9 428.6 640 439.7 640 450.9C640 484.6 612.6 512 578.9 512H55.91C25.03 512 .0006 486.1 .0006 456.1L0 456.1z"
+              />
+            </svg>
+          </div>
+          <div class="h-2.5 bg-gray-300 rounded-full w-48 mb-4"></div>
+          <div class="h-3 bg-gray-300 rounded-full w-20 mb-2.5"></div>
+          <div class="h-2 bg-gray-300 rounded-full w-10 mb-4"></div>
+          <div class="h-2 bg-gray-300 rounded-full w-30 mb-2.5"></div>
+          <div class="flex items-center w-full space-x-2 mb-2.5">
+            <div class="h-2.5 bg-gray-300 rounded-full w-full"></div>
+            <div class="h-2.5 bg-gray-300 rounded-full w-full"></div>
+            <div class="h-2.5 bg-gray-300 rounded-full w-24"></div>
+          </div>
+          <div class="h-2 bg-gray-300 rounded-full w-30 mb-2.5"></div>
+          <div class="flex items-center w-full space-x-2">
+            <div class="h-2.5 bg-gray-300 rounded-full w-32"></div>
+            <div class="h-2.5 bg-gray-300 rounded-full w-24"></div>
+            <div class="h-2.5 bg-gray-300 rounded-full w-full"></div>
+          </div>
+
+          <div class="flex justify-between mt-4">
+            <div class="h-5 bg-gray-300 rounded-full w-32"></div>
+
+            <div class="h-6 bg-gray-300 rounded-full w-20 mt-4"></div>
+          </div>
+        </div>
+      </div>
+
+      <div
+        id="signOutCard"
+        class="hidden h-screen w-screen bg-opacity-40 backdrop-blur-lg fixed z-20"
+      >
+        <div
+          class="z-100 absolute top-1/3 right-1/3 transition-all duration-600 ease-out backdrop-blur-md bg-opacity-50 backdrop-blur-md max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow"
+        >
+          <a href="#">
+            <h5 class="mb-2 text-xl font-bold tracking-tight text-gray-900">
+              You've been successfully logged out.
+            </h5>
+          </a>
+          <p class="mb-3 font-normal text-gray-700">
+            Hope you had a pleasant experience! You can log in again if you
+            would like to continue the experience.
+          </p>
+          <button
+            href="#"
+            id="okBtn"
+            class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-[#1aa8b1] rounded-lg hover:bg-[#1aa8b1]/60 focus:ring-4 focus:outline-none focus:ring-[#1aa8b1]"
+          >
+            Ok
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script> -->
+
+    <!--TAILWIND CSS-->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../css/scroll.css" />
+
+    <!-- ION ICONS -->
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+
+    <!-- AXIOS -->
+    <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
+
+    <!-- EXTERNAL JAVASCRIPT FILES -->
+    <script type="module" src="../javascript/hotel.js"></script>
+  </body>
+</html>

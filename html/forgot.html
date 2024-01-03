@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- FAVICON -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="../assets/favicon-32x32.png"
+    />
+
+    <!--FONTS-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Password Reset | EasyJourney</title> 
+  </head>
+  <body class="relative bg-[url('../assets/pattern.jpg')] bg-cover">
+    <div
+      class="absolute top-[25vh] right-[40vw] shadow bg-opacity-60 bg-backdrop-xl rounded-xl p-5"
+    >
+      <div class="flex justify-start">
+        <p href="#" class="text-xl font-bold -pt-10 tracking-wide">
+          Eas<span class="text-[#1aa8b1]">y</span>Jour<span
+            class="text-[#1aa8b1]"
+            >ney</span
+          >
+        </p>
+      </div>
+      <form action="" class="" id="reset-password-form">
+        <p
+          href="#"
+          class="mt-4 mb-4 text-2xl text-center text-[#003049] font-bold tracking-wide"
+        >
+          Password Reset
+        </p>
+        <div class="relative z-0 w-full mb-6 group">
+          <input
+            type="email"
+            name="email"
+            id="floating_email"
+            class="block py-2.5 px-0 w-full text-sm text-[#003049] bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-[#003049] peer"
+            placeholder=" "
+            autocomplete="off"
+          />
+          <label
+            for="floating_email"
+            class="peer-focus:font-medium absolute text-sm text-gray-600 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-[#003049]  peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+            >Email address</label
+          >
+        </div>
+        <span
+          id="email_error"
+          class="hidden text-red-800 italic flex justify-start text-xs -mt-2 mb-1"
+        ></span>
+        <button
+          type="submit"
+          id="forgot-email"
+          class="text-white bg-[#1aa8b1] hover:bg-[#0b8a93] focus:ring-2 focus:outline-none focus:ring-[#0b8a93]/80 font-medium rounded-lg text-md w-full sm:w-auto px-4 py-2.5 text-center hover:scale-105 transition-all duration-300"
+        >
+          Submit
+        </button>
+      </form>
+
+      <div id="forgot-done" class="hidden">
+        <a href="">
+          <h5 class="text-md mt-5 mb-3 font-bold tracking-tight text-gray-900">
+            Password Reset Email has been sent successfully.
+          </h5>
+        </a>
+        <button
+          href=""
+          id="okBtn"
+          class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white rounded-lg  bg-[#1aa8b1] hover:bg-[#0b8a93] focus:ring-2 focus:outline-none focus:ring-[#0b8a93]/80 transition-all duration-300"
+        >
+          Ok
+        </button>
+      </div>
+    </div>
+
+    <!-- TAILWIND CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- EXTERNAL JAVASCRIPT FILES -->
+    <script type="module" src="../javascript/forgot.js"></script>
+  </body>
+</html>
